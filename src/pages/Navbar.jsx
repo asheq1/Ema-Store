@@ -6,7 +6,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="bg-gray-800 p-4 ">
       <div className="container mx-auto flex justify-between items-center">
         {/* Left side: Logo and Hamburger Icon (Mobile) */}
         <div className="flex items-center">
@@ -31,17 +31,23 @@ const Navbar = () => {
         {/* Centered Navigation NavLinks */}
         <ul className={`flex-1 justify-center md:flex hidden space-x-6`}>
           <li>
-            <NavLink to="/" className="text-gray-300 hover:text-white">
+            <NavLink to="/" 
+              className={({ isActive }) => 
+                isActive ? 'text-rose-300 font-bold' : 'text-white font-bold'}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/books" className="text-gray-300 hover:text-white">
+            <NavLink to="/listedBooks" 
+              className={({ isActive }) => 
+                isActive ? 'text-rose-300 font-bold' : 'text-white font-bold'}>
               Listed Books
             </NavLink>
           </li>
           <li>
-            <NavLink to="/read" className="text-gray-300 hover:text-white">
+            <NavLink to="/stats" 
+              className={({ isActive }) => 
+                isActive ? 'text-rose-300 font-bold' : 'text-white font-bold'}>
               Pages to Read
             </NavLink>
           </li>

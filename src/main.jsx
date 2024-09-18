@@ -1,17 +1,34 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Header from './components/Header.jsx';
+import MainLayOut from './layouts/MainLayOut';
+import Home from './pages/Home';
+import ListedBooks from './pages/ListedBooks';
+import ReadPages from './pages/ReadPages';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Header/>,
+    element: <MainLayOut />,
+    children: [
+      {
+        index: true,
+        element: <Home />
+      },
+      {
+        path: "/listedBooks",
+        element: <ListedBooks />,
+        loader: () => fetch('books.json')
+      },
+      {
+        path: "/stats",
+        element: <ReadPages />
+      }
+    ]
   },
 ]);
 
