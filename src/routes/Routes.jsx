@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import ListedBooks from "../pages/ListedBooks";
 import BookDetails from "../components/BookDetails";
 import ReadPages from "../pages/ReadPages";
+import Read from "../pages/Read";
+import Wishlist from "../pages/Wishlist";
 
 export const router = createBrowserRouter([
     {
@@ -26,17 +28,24 @@ export const router = createBrowserRouter([
             const books = await res.json();
             const book = books.find((b) => b.bookId === parseInt(params.id)); // Match using bookId
             return book || null;
-          },
-          children: [
-            {
-                
-            }
-          ]
+          }
         },
         {
             path: "/listedBooks",
             element: <ListedBooks />,
-            loader: () => fetch('/books.json')
+            loader: () => fetch('/books.json'),
+            children: [
+            {
+                index: true,
+                element: <Read />,
+                loader: () => fetch('books.json')
+            },
+            {
+                path: "wishlist",
+                element: <Wishlist />,
+                loader: () => fetch('books.json')
+            }
+          ]
         },
         {
           path: "/stats",
