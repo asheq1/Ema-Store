@@ -1,48 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import MainLayOut from './layouts/MainLayOut';
-import Home from './pages/Home';
-import ListedBooks from './pages/ListedBooks';
-import ReadPages from './pages/ReadPages';
-import BookDetails from './components/BookDetails';
-
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainLayOut />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "/listedBooks",
-        element: <ListedBooks />,
-        loader: () => fetch('/books.json')
-      },
-      {
-        path: "/listedBooks/:id",
-        element: <BookDetails />,
-        loader: async ({ params }) => {
-          const res = await fetch('/books.json');
-          const books = await res.json();
-          const book = books.find((b) => b.bookId === parseInt(params.id)); // Match using bookId
-          return book || null;
-        }
-      },
-      {
-        path: "/stats",
-        element: <ReadPages />
-      }
-    ]
-  },
-]);
+import { RouterProvider } from "react-router-dom";
+import { router } from './Routes/Routes';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

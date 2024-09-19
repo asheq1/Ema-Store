@@ -39,19 +39,6 @@
       "yearOfPublishing": 1949
     },
     {
-      "bookId": 4,
-      "bookName": "Becoming",
-      "author": "Michelle Obama",
-      "image": "/public/books/michelle.jpg",
-      "review": "In this deeply personal memoir, Michelle Obama reflects on her life, from her childhood in Chicago to her time as the First Lady of the United States. Becoming is a story of resilience, empowerment, and the importance of embracing one's own identity.",
-      "totalPages": 448,
-      "rating": 4.9,
-      "category": "Biography",
-      "tags": ["Inspiring", "Political"],
-      "publisher": "Crown Publishing Group",
-      "yearOfPublishing": 2018
-    },
-    {
       "bookId": 5,
       "bookName": "Where the Crawdads Sing",
       "author": "Delia Owens",
@@ -128,32 +115,6 @@
       "tags": ["War", "Drama"],
       "publisher": "Knopf Books",
       "yearOfPublishing": 2005
-    },
-    {
-      "bookId": 11,
-      "bookName": "Harry Potter and the Sorcerer's Stone",
-      "author": "J.K. Rowling",
-      "image": "/public/books/harryPotter.jpg",
-      "review": "The first book in the Harry Potter series introduces readers to the magical world of Hogwarts. Harry discovers his true identity as a wizard and embarks on an adventure filled with wonder, danger, and friendship. A perfect blend of magic and mystery, this book is a timeless classic.",
-      "totalPages": 309,
-      "rating": 4.9,
-      "category": "Fantasy",
-      "tags": ["Magic", "Adventure"],
-      "publisher": "Bloomsbury",
-      "yearOfPublishing": 1997
-    },
-    {
-      "bookId": 12,
-      "bookName": "The Catcher in the Rye",
-      "author": "J.D. Salinger",
-      "image": "/public/books/catcher.jpeg",
-      "review": "The Catcher in the Rye is a classic coming-of-age novel that follows Holden Caulfield, a disillusioned teenager who has been kicked out of his prep school. Through Holden's narrative, Salinger explores themes of identity, alienation, and loss, making this novel resonate with generations of readers.",
-      "totalPages": 234,
-      "rating": 4.0,
-      "category": "Classic",
-      "tags": ["Coming-of-age", "Drama"],
-      "publisher": "Little, Brown and Company",
-      "yearOfPublishing": 1951
     }
   ]
   

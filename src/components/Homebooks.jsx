@@ -7,7 +7,7 @@ const Homebooks = ({books}) => {
     return (
       <div className="max-w-xs p-3 space-y-3 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900 mx-auto flex flex-col justify-between min-h-[450px]">
         {/* Image with Link */}
-        <Link to={`/listedBooks/${bookId}`}>
+        <Link to={`/book/${bookId}`}>
           <img
             src={image}
             alt={bookName}
@@ -29,7 +29,7 @@ const Homebooks = ({books}) => {
   
         {/* Book Name and Author */}
         <div className="mt-6 mb-2">
-          <Link to={`/listedBooks/${bookId}`}>
+          <Link to={`/book/${bookId}`}>
             <h2 className="text-2xl font-semibold tracking-wide hover:underline">
               {bookName}
             </h2>
