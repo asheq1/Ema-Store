@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
 import { FaRegStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const BookCards = ({ books }) => {
+const Homebooks = ({books}) => {
     const { bookId, bookName, image, author, category, rating, tags } = books;
   
     return (
       <div className="max-w-xs p-3 space-y-3 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900 mx-auto flex flex-col justify-between min-h-[450px]">
         {/* Image with Link */}
-        <Link to={`/listedBooks/${bookId}`}> {/* Make sure bookId is passed here */}
+        <Link to={`/listedBooks/${bookId}`}>
           <img
             src={image}
             alt={bookName}
@@ -29,7 +29,7 @@ const BookCards = ({ books }) => {
   
         {/* Book Name and Author */}
         <div className="mt-6 mb-2">
-          <Link to={`/listedBooks/${bookId}`}> {/* Correct bookId here too */}
+          <Link to={`/listedBooks/${bookId}`}>
             <h2 className="text-2xl font-semibold tracking-wide hover:underline">
               {bookName}
             </h2>
@@ -52,8 +52,6 @@ const BookCards = ({ books }) => {
         </div>
       </div>
     );
-  };
-  
-  
+};
 
-export default BookCards;
+export default Homebooks;

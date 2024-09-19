@@ -1,8 +1,11 @@
-# React + Vite
+# issue faces
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- need to cast params.id to a number when matching 
+books.find((b) => b.bookId === parseInt(params.id));
 
-Currently, two official plugins are available:
+- Ensure Correct Image Path
+Also, note that the image path in your books.json is relative and may not work correctly when the file is fetched from the public folder. Since you're fetching books.json from public, you should either move the images to the public folder or adjust the paths accordingly.
+You can either:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Move the images to /public/assets/books/silent-patient.jpeg.
+

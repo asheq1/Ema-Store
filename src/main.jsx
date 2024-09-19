@@ -9,6 +9,8 @@ import MainLayOut from './layouts/MainLayOut';
 import Home from './pages/Home';
 import ListedBooks from './pages/ListedBooks';
 import ReadPages from './pages/ReadPages';
+import BookDetails from './components/BookDetails';
+
 
 const router = createBrowserRouter([
   {
@@ -17,12 +19,22 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/listedBooks",
         element: <ListedBooks />,
-        loader: () => fetch('books.json')
+        loader: () => fetch('/books.json')
+      },
+      {
+        path: "/listedBooks/:id",
+        element: <BookDetails />,
+        loader: async ({ params }) => {
+          const res = await fetch('/books.json');
+          const books = await res.json();
+          const book = books.find((b) => b.bookId === parseInt(params.id)); // Match using bookId
+          return book || null;
+        }
       },
       {
         path: "/stats",
